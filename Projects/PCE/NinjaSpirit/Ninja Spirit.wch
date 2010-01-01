@@ -1,0 +1,11 @@
+
+9
+00000	000017C9	b	u	0	life
+00001	000014B7	b	u	0	y pos
+00002	00001228	b	u	0	y pos
+00003	00001229	b	u	0	jump
+00004	00000B68	b	u	0	"continues"
+00005	000013B1	b	u	0	x within screen
+00006	000019D6	b	u	0	x within screen 2
+00007	00000503	b	u	0	x scroll
+00008	00000036	b	u	0	y scroll

@@ -1,68 +1,69 @@
---Granzort Enhanced HUD
+--Ninja Spirit Enhanced HUD
 
 gui.register( function ()
-
-	agg.setFont("gse5x7")
-	agg.lineColor(255,200,200,255)
-	
-
 --Colors
 rgbgreen = {0,255,0,255} rgbyellow = {255,255,0,255} rgborange = {255,100,0,255} rgbpink = {255,0,255,255}
 rgbcyan = {0,255,255,255} rgbFbox = {210,150,150,255} rgbred = {255,0,0,255} rgbblue = {0,0,255,255}
 rgbblack = {0,0,0,255} rgbwhite = {255,255,255,255} rgbredjimmy = {255, 0, 100, 255} rgbbluebimmy = {0,150,255,255}
-	agg.setFont("gse6x9")					--lets draw differently
+
+--	agg.setFont("gse5x7")
+--	agg.lineColor(255,200,200,255)
+
+	agg.setFont("gse6x9")					--change font
 --Input display
 	Joy1 = joypad.read(1)
 	doPlayerJoy(-1,219, Joy1, rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])
---Player MP
-	playerMP = memory.readbyte(0x1f0376)
-	doSomeText(42, 202, ""..playerMP.."", rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])
---boss HP
+--boss HP display
 	bossHP = 0
-	boss1HP = memory.readbyte(0x1f1714)
-	if boss1HP > 0 and boss1HP < 21 then bossHP = boss1HP end
-	doSomeText(135, 223, "Boss:", rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])
-	doSomeText(167, 223, ""..bossHP.."", rgbred[1], rgbred[2], rgbred[3], rgbred[4])
---speed
-	speedH = memory.readbyte(0x1f0386)
-	if speedH == 251 then speedH = 5 end
-	if speedH == 252 then speedH = 4 end
-	if speedH == 253 then speedH = 3 end
-	if speedH == 254 then speedH = 2 end
-	if speedH == 255 then speedH = 1 end
-	doSomeText(57, 223, "Speed H:", rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])
-	doSomeText(105, 223, ""..speedH.."", rgbred[1], rgbred[2], rgbred[3], rgbred[4])
-	speedV = memory.readbyte(0x1f0384)
-	if speedV == 248 then speedV = 8 end
-	if speedV == 249 then speedV = 7 end
-	if speedV == 250 then speedV = 6 end
-	if speedV == 251 then speedV = 5 end
-	if speedV == 252 then speedV = 4 end
-	if speedV == 253 then speedV = 3 end
-	if speedV == 254 then speedV = 2 end
-	if speedV == 255 then speedV = 1 end
-	doSomeText(113, 223, "V:", rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])
-	doSomeText(125, 223, ""..speedV.."", rgbred[1], rgbred[2], rgbred[3], rgbred[4])
+	boss1HP = memory.readbyte(0x1f18b8)
+	if boss1HP > 2 and boss1HP < 65 then bossHP = boss1HP end
+	boss2HP = memory.readbyte(0x1f18C6)
+	if boss2HP > 2 and boss2HP < 161 then bossHP = boss2HP end
+	boss3HP = memory.readbyte(0x1f18aD)
+	if boss3HP > 2 and boss3HP < 256 then bossHP = boss3HP-9 end
+	boss4HP = memory.readbyte(0x1f188F)
+	if boss4HP > 2 and boss4HP < 161 then bossHP = boss4HP end
+	boss4bHP = memory.readbyte(0x1f1884)
+	if boss4bHP > 2 and boss4bHP < 161 then bossHP = bossHP+boss4bHP end
+	boss7HP = memory.readbyte(0x1f1875)
+	if boss7HP > 2 and boss7HP < 256 then bossHP = boss7HP end
+	doSomeText(216, 223, "Boss", rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])
+	doSomeText(242, 223, ""..bossHP.."", rgbred[1], rgbred[2], rgbred[3], rgbred[4])
+--Scrolling
+	scrollx = memory.readbyte(0x1f0503)
+	doSomeText(57, 223, "ScrollY", rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])
+	doSomeText(100, 223, ""..scrollx.."", rgbred[1], rgbred[2], rgbred[3], rgbred[4])
+	scrolly = memory.readbyte(0x1f0036)
+	doSomeText(118, 223, "X", rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])
+	doSomeText(126, 223, ""..scrolly.."", rgbred[1], rgbred[2], rgbred[3], rgbred[4])
+--Positions
+	posy = memory.readbyte(0x1f14B7)
+	doSomeText(144, 223, "PosY", rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])
+	doSomeText(169, 223, ""..posy.."", rgbred[1], rgbred[2], rgbred[3], rgbred[4])
+	posx = memory.readbyte(0x1f13B1)
+	doSomeText(188, 223, "X", rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])
+	doSomeText(195, 223, ""..posx.."", rgbred[1], rgbred[2], rgbred[3], rgbred[4])
 
-	
+
+--Enhanced frame counter	
 	curFrame = emu.framecount()						--the current frame
 	curmoviemode = movie.mode()						--the current movie mode
-	moviesize = movie.length()
+	movielength = movie.length()						--the current movie length
 	if curmoviemode == "playback" then
-	agg.fillColor (rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])	agg.lineColor (rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])	agg.triangle (181, 224, 188, 227, 181, 231)	agg.noFill()  --play symbol
- 	doSomeText(190, 223, ""..curFrame.."", rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4]) 				--draw current frame
-	doSomeText(220, 223, "/"..moviesize.."", 0,255,0,255)								--draw movie size
+	agg.fillColor (rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])	agg.lineColor (rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])	agg.triangle (262, 224, 269, 227, 262, 231)	agg.noFill()  --play symbol
+ 	doSomeText(273, 223, ""..curFrame.."", rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4]) 				--draw current frame
+	doSomeText(305, 223, "/"..movielength.."", 0,255,0,255)								--draw movie length
 	end
 	if curmoviemode == "record" then
-	agg.fillColor (rgbred[1], rgbred[2], rgbred[3], rgbred[4])	agg.lineColor (rgbred[1], rgbred[2], rgbred[3], rgbred[4])	agg.roundedRect (181, 224, 188, 231, 255)	agg.noFill()  --record symbol
- 	doSomeText(190, 223, ""..curFrame.."", rgbred[1], rgbred[2], rgbred[3], rgbred[4]) 				--draw current frame
+	agg.fillColor (rgbred[1], rgbred[2], rgbred[3], rgbred[4])	agg.lineColor (rgbred[1], rgbred[2], rgbred[3], rgbred[4])	agg.roundedRect (262, 224, 269, 231, 255)	agg.noFill()  --record symbol
+ 	doSomeText(273, 223, ""..curFrame.."", rgbred[1], rgbred[2], rgbred[3], rgbred[4]) 				--draw current frame
 	end
 	if curmoviemode == "inactive" then
-	agg.fillColor (rgbblue[1], rgbblue[2], rgbblue[3], rgbblue[4])	agg.lineColor (rgbblue[1], rgbblue[2], rgbblue[3], rgbblue[4])	agg.roundedRect (181, 224, 188, 231, 1)	agg.noFill()  --stop symbol
- 	doSomeText(190, 223, ""..curFrame.."", rgbblue[1], rgbblue[2], rgbblue[3], rgbblue[4]) 				--draw current frame
+	agg.fillColor (rgbblue[1], rgbblue[2], rgbblue[3], rgbblue[4])	agg.lineColor (rgbblue[1], rgbblue[2], rgbblue[3], rgbblue[4])	agg.roundedRect (262, 224, 269, 231, 1)	agg.noFill()  --stop symbol
+ 	doSomeText(273, 223, ""..curFrame.."", rgbblue[1], rgbblue[2], rgbblue[3], rgbblue[4]) 				--draw current frame
 	end
-	
-	agg.setFont("verdana18_bold")
+--end	
+	agg.setFont("verdana18_bold")				--set back system font
 end)
 
 
