@@ -12,38 +12,53 @@ rgbcyan = {0,255,255,255} rgbFbox = {210,150,150,255} rgbred = {255,0,0,255} rgb
 rgbblack = {0,0,0,255} rgbwhite = {255,255,255,255} rgbredjimmy = {255, 0, 100, 255} rgbbluebimmy = {0,150,255,255}
 	agg.setFont("gse6x9")					--lets draw differently
 --Input display
---	agg.fillColor (0, 0, 0, 255)	agg.lineColor (0, 0, 0, 0)	agg.rectangle (10, 209, 245, 215)	agg.noFill()	--hide cars hp and put our infos
+	agg.fillColor (0, 0, 0, 255)	agg.lineColor (0, 0, 0, 0)	agg.rectangle (10, 209, 245, 215)	agg.noFill()	--hide cars hp and put our infos
 
 	Joy1 = joypad.read(1)
 	doPlayerJoy(32,219, Joy1, rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
 	--HP
 	p1hp = (memory.readbyte(0x1F10C0));
+	p1pos = (memory.readbyte(0x1F1004));
 	doSomeText(10, 223, ""..p1hp.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
+	doSomeText(10, 214, ""..p1pos.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
 
 	Joy2 = joypad.read(2)
 	doPlayerJoy(80,219, Joy2, rgborange[1], rgborange[2], rgborange[3], rgborange[4])
 	--HP
-	p2hp = (memory.readbyte(0x1F108B));
+	p2hp = (memory.readbyte(0x1F10C4));
+	p2pos = (memory.readbyte(0x1F1014));
 	doSomeText(58, 223, ""..p2hp.."", rgborange[1], rgborange[2], rgborange[3], rgborange[4])
+	doSomeText(58, 214, ""..p2pos.."", rgborange[1], rgborange[2], rgborange[3], rgborange[4])
 
 	Joy3 = joypad.read(3)
 	doPlayerJoy(128,219, Joy3, rgbblue[1], rgbblue[2], rgbblue[3], rgbblue[4])
 	--HP
-	p3hp = (memory.readbyte(0x1F10C4)); --wrong address...
+	p3hp = (memory.readbyte(0x1F108B));
+	p3pos = (memory.readbyte(0x1F1024));
 	doSomeText(106, 223, ""..p3hp.."", rgbblue[1], rgbblue[2], rgbblue[3], rgbblue[4])
+	doSomeText(106, 214, ""..p3pos.."", rgbblue[1], rgbblue[2], rgbblue[3], rgbblue[4])
 
 	Joy4 = joypad.read(4)
 	doPlayerJoy(176,219, Joy4, rgbyellow[1], rgbyellow[2], rgbyellow[3], rgbyellow[4])
 	--HP
-	p4hp = (memory.readbyte(0x1F001F)); --wrong address...
+	p4hp = (memory.readbyte(0x1F10CC));
+	p4pos = (memory.readbyte(0x1F1034));
 	doSomeText(154, 223, ""..p4hp.."", rgbyellow[1], rgbyellow[2], rgbyellow[3], rgbyellow[4])
+	doSomeText(154, 214, ""..p4pos.."", rgbyellow[1], rgbyellow[2], rgbyellow[3], rgbyellow[4])
 
 	Joy5 = joypad.read(5)
 	doPlayerJoy(224,219, Joy5, rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])
 	--HP
-	p5hp = (memory.readbyte(0x1F001F)); --wrong address...
+	p5hp = (memory.readbyte(0x1F10D0));
+	p5pos = (memory.readbyte(0x1F1044));
 	doSomeText(202, 223, ""..p5hp.."", rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])
+	doSomeText(202, 214, ""..p1pos.."", rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])
+	cpuhp = (memory.readbyte(0x1F10D4));
+	cpupos = (memory.readbyte(0x1F1054));
+	doSomeText(102, 123, ""..cpuhp.."", rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])
+	doSomeText(102, 53, ""..cpupos.."", rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])
 
+	-- 2 bytes (memory.readbyte(0x1F1004) (memory.readbyte(0x1F1014) (memory.readbyte(0x1F1024) (memory.readbyte(0x1F1034) (memory.readbyte(0x1F1044) (memory.readbyte(0x1F1054)
 
 	curFrame = emu.framecount()						--the current frame
 	curmoviemode = movie.mode()						--the current movie mode
