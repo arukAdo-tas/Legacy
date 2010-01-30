@@ -10,53 +10,58 @@ gui.register( function ()
 rgbgreen = {0,200,0,200} rgbyellow = {255,255,0,255} rgborange = {255,100,0,255} rgbpink = {255,0,255,255}
 rgbcyan = {0,255,255,255} rgbFbox = {210,150,150,255} rgbred = {255,0,0,255} rgbblue = {0,100,255,255}
 rgbblack = {0,0,0,255} rgbwhite = {255,255,255,255} rgbredjimmy = {255, 0, 100, 255} rgbbluebimmy = {0,150,255,255}
-	agg.setFont("gse6x9")					--lets draw differently
---Input display
-	agg.fillColor (0, 0, 0, 255)	agg.lineColor (0, 0, 0, 0)	agg.rectangle (10, 209, 245, 215)	agg.noFill()	--hide cars hp and put our infos
 
-	Joy1 = joypad.read(1)
-	doPlayerJoy(32,219, Joy1, rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
-	--HP
+--	agg.setFont("gse6x9")					--font
+	agg.setFont("gse5x7")					--font
+--hide players hp bars so we can put our own stuff
+	agg.fillColor (0, 0, 0, 255)	agg.lineColor (0, 0, 0, 0)	agg.rectangle (10, 209, 245, 215)	agg.noFill()
+
+--Players Infos
 	p1hp = (memory.readbyte(0x1F10C0));
-	p1pos = (memory.readbyte(0x1F1004));
-	doSomeText(10, 223, ""..p1hp.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
-	doSomeText(10, 214, ""..p1pos.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
-
-	Joy2 = joypad.read(2)
-	doPlayerJoy(80,219, Joy2, rgborange[1], rgborange[2], rgborange[3], rgborange[4])
-	--HP
+	p1scroll = (memory.readword(0x1F1008));
+	p1Y = (memory.readword(0x1F1004))/p1scroll-61;
+	p1X = (memory.readword(0x1F1006))/p1scroll-30;
 	p2hp = (memory.readbyte(0x1F10C4));
-	p2pos = (memory.readbyte(0x1F1014));
-	doSomeText(58, 223, ""..p2hp.."", rgborange[1], rgborange[2], rgborange[3], rgborange[4])
-	doSomeText(58, 214, ""..p2pos.."", rgborange[1], rgborange[2], rgborange[3], rgborange[4])
-
-	Joy3 = joypad.read(3)
-	doPlayerJoy(128,219, Joy3, rgbblue[1], rgbblue[2], rgbblue[3], rgbblue[4])
-	--HP
+	p2scroll = (memory.readword(0x1F1018));
+	p2Y = (memory.readword(0x1F1014))/p2scroll-61;
+	p2X = (memory.readword(0x1F1016))/p2scroll-30;
 	p3hp = (memory.readbyte(0x1F108B));
-	p3pos = (memory.readbyte(0x1F1024));
-	doSomeText(106, 223, ""..p3hp.."", rgbblue[1], rgbblue[2], rgbblue[3], rgbblue[4])
-	doSomeText(106, 214, ""..p3pos.."", rgbblue[1], rgbblue[2], rgbblue[3], rgbblue[4])
-
-	Joy4 = joypad.read(4)
-	doPlayerJoy(176,219, Joy4, rgbyellow[1], rgbyellow[2], rgbyellow[3], rgbyellow[4])
-	--HP
+	p3scroll = (memory.readword(0x1F1028));
+	p3Y = (memory.readword(0x1F1024))/p3scroll-61;
+	p3X = (memory.readword(0x1F1026))/p3scroll-30;
 	p4hp = (memory.readbyte(0x1F10CC));
-	p4pos = (memory.readbyte(0x1F1034));
-	doSomeText(154, 223, ""..p4hp.."", rgbyellow[1], rgbyellow[2], rgbyellow[3], rgbyellow[4])
-	doSomeText(154, 214, ""..p4pos.."", rgbyellow[1], rgbyellow[2], rgbyellow[3], rgbyellow[4])
-
-	Joy5 = joypad.read(5)
-	doPlayerJoy(224,219, Joy5, rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])
-	--HP
+	p4scroll = (memory.readword(0x1F1038));
+	p4Y = (memory.readword(0x1F1034))/p4scroll-61;
+	p4X = (memory.readword(0x1F1036))/p4scroll-30;
 	p5hp = (memory.readbyte(0x1F10D0));
-	p5pos = (memory.readbyte(0x1F1044));
-	doSomeText(202, 223, ""..p5hp.."", rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])
-	doSomeText(202, 214, ""..p1pos.."", rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])
+	p5scroll = (memory.readword(0x1F1048));
+	p5Y = (memory.readword(0x1F1044))/p5scroll-61;
+	p5X = (memory.readword(0x1F1046))/p5scroll-30;
 	cpuhp = (memory.readbyte(0x1F10D4));
-	cpupos = (memory.readbyte(0x1F1054));
-	doSomeText(102, 123, ""..cpuhp.."", rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])
-	doSomeText(102, 53, ""..cpupos.."", rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])
+	cpuscroll = (memory.readword(0x1F1058));
+	cpuY = (memory.readword(0x1F1054))/cpuscroll-61;
+	cpuX = (memory.readword(0x1F1056))/cpuscroll-30;
+
+--Input display
+	Joy1 = joypad.read(1)
+	Joy2 = joypad.read(2)
+	Joy3 = joypad.read(3)
+	Joy4 = joypad.read(4)
+	Joy5 = joypad.read(5)
+	doPlayerJoy(0,219, Joy1, rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
+	doPlayerJoy(48,219, Joy2, rgborange[1], rgborange[2], rgborange[3], rgborange[4])
+	doPlayerJoy(96,219, Joy3, rgbblue[1], rgbblue[2], rgbblue[3], rgbblue[4])
+	doPlayerJoy(144,219, Joy4, rgbyellow[1], rgbyellow[2], rgbyellow[3], rgbyellow[4])
+	doPlayerJoy(192,219, Joy5, rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])
+
+
+	--HP
+	doSomeText(p1X-2, p1Y+12, ""..p1hp.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
+	doSomeText(p2X-2, p2Y+12, ""..p2hp.."", rgborange[1], rgborange[2], rgborange[3], rgborange[4])
+	doSomeText(p3X-2, p3Y+12, ""..p3hp.."", rgbblue[1], rgbblue[2], rgbblue[3], rgbblue[4])
+	doSomeText(p4X-2, p4Y+12, ""..p4hp.."", rgbyellow[1], rgbyellow[2], rgbyellow[3], rgbyellow[4])
+	doSomeText(p5X-2, p5Y+12, ""..p5hp.."", rgbgreen[1], rgbgreen[2], rgbgreen[3], rgbgreen[4])
+	doSomeText(cpuX-2, cpuY+12, ""..cpuhp.."", 100, 100, 100, 100)
 
 	-- 2 bytes (memory.readbyte(0x1F1004) (memory.readbyte(0x1F1014) (memory.readbyte(0x1F1024) (memory.readbyte(0x1F1034) (memory.readbyte(0x1F1044) (memory.readbyte(0x1F1054)
 
@@ -100,9 +105,9 @@ function doPlayerJoy(X, Y, Joy, r, g, b, a)
 				--down button, release
 				doButton(X+7, Y+7, X+11, Y+13, 1, rgbblack[1], rgbblack[2], rgbblack[3], rgbblack[4], r, g, b, a)
 				--select button, release
-				doButton(X-15, Y-2, X-9, Y-6, 1, rgbblack[1], rgbblack[2], rgbblack[3], rgbblack[4], r, g, b, a)
+				doButton(X+20, Y-2, X+26, Y-6, 1, rgbblack[1], rgbblack[2], rgbblack[3], rgbblack[4], r, g, b, a)
 				--run button, release
-				doButton(X-7, Y-2, X-1, Y-6, 1, rgbblack[1], rgbblack[2], rgbblack[3], rgbblack[4], r, g, b, a)
+				doButton(X+28, Y-2, X+34, Y-6, 1, rgbblack[1], rgbblack[2], rgbblack[3], rgbblack[4], r, g, b, a)
 				--I button, release
 				doButton(X+2, Y-10, X+9, Y-2, 255, rgbblack[1], rgbblack[2], rgbblack[3], rgbblack[4], r, g, b, a)
 				--II button, release
@@ -124,10 +129,10 @@ function doPlayerJoy(X, Y, Joy, r, g, b, a)
 				doButton(X+7, Y+7, X+11, Y+13, 1, r, g, b, a, rgbblack[1], rgbblack[2], rgbblack[3], rgbblack[4])
 			elseif (key) == "Select" then
 				--select button, hold
-				doButton(X-15, Y-2, X-9, Y-6, 1, r, g, b, a, rgbblack[1], rgbblack[2], rgbblack[3], rgbblack[4])
+				doButton(X+20, Y-2, X+26, Y-6, 1, r, g, b, a, rgbblack[1], rgbblack[2], rgbblack[3], rgbblack[4])
 			elseif (key) == "Run" then
 				--run button, hold
-				doButton(X-7, Y-2, X-1, Y-6, 1, r, g, b, a, rgbblack[1], rgbblack[2], rgbblack[3], rgbblack[4])
+				doButton(X+28, Y-2, X+34, Y-6, 1, r, g, b, a, rgbblack[1], rgbblack[2], rgbblack[3], rgbblack[4])
 			elseif (key) == "I" then
 				--I button, hold
 				doButton(X+2, Y-10, X+9, Y-2, 255, r, g, b, a, rgbblack[1], rgbblack[2], rgbblack[3], rgbblack[4])
