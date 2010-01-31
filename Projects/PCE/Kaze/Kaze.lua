@@ -21,6 +21,7 @@ rgbblack = {0,0,0,255} rgbwhite = {255,255,255,255} rgbredjimmy = {255, 0, 100, 
 	-- 2 byte (memory.readbyte(0x1F0434) Y kaze
 	-- 2 byte (memory.readbyte(0x1F0435) another Y kaze
 
+	KazeSpeed = (memory.readbyte(0x1F0421));
 	KazeX = (memory.readword(0x1F0433));
 	KazeX2 = (memory.readword(0x1F0432))/256;
 	KazeY = (memory.readword(0x1F0435));
@@ -32,7 +33,8 @@ rgbblack = {0,0,0,255} rgbwhite = {255,255,255,255} rgbredjimmy = {255, 0, 100, 
 
 	doSomeText(113, 15, ""..KazeHPcounter.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
 	doSomeText(42, 15, ""..KazeHP.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
-	doSomeText(18, 24, "X:"..KazeX.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
+	doSomeText(90, 23, "X:"..KazeX.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
+	doSomeText(48, 23, "Speed:"..KazeSpeed.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
 --	doSomeText(KazeX, KazeY2, ""..KazeY2.."", rgbblue[1], rgbblue[2], rgbblue[3], rgbblue[4])
 	
 
