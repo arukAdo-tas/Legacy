@@ -11,7 +11,6 @@ rgbgreen = {0,200,0,200} rgbyellow = {255,255,0,255} rgborange = {255,100,0,255}
 rgbcyan = {0,255,255,255} rgbFbox = {210,150,150,255} rgbred = {255,0,0,255} rgbblue = {0,100,255,255}
 rgbblack = {0,0,0,255} rgbwhite = {255,255,255,255} rgbredjimmy = {255, 0, 100, 255} rgbbluebimmy = {0,150,255,255}
 
---	agg.setFont("gse6x9")					--font
 	agg.setFont("gse5x7")					--font
 --hide players hp bars so we can put our own stuff
 	agg.fillColor (0, 0, 0, 255)	agg.lineColor (0, 0, 0, 0)	agg.rectangle (10, 209, 245, 215)	agg.noFill()
@@ -65,6 +64,7 @@ rgbblack = {0,0,0,255} rgbwhite = {255,255,255,255} rgbredjimmy = {255, 0, 100, 
 
 	-- 2 bytes (memory.readbyte(0x1F1004) (memory.readbyte(0x1F1014) (memory.readbyte(0x1F1024) (memory.readbyte(0x1F1034) (memory.readbyte(0x1F1044) (memory.readbyte(0x1F1054)
 
+	agg.setFont("gse6x9")					--font
 	curFrame = emu.framecount()						--the current frame
 	curmoviemode = movie.mode()						--the current movie mode
 	moviesize = movie.length()
