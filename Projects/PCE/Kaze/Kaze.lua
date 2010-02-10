@@ -33,8 +33,8 @@ rgbblack = {0,0,0,255} rgbwhite = {255,255,255,255} rgbredjimmy = {255, 0, 100, 
 
 	doSomeText(113, 15, ""..KazeHPcounter.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
 	doSomeText(42, 15, ""..KazeHP.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
-	doSomeText(90, 23, "X:"..KazeX.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
-	doSomeText(48, 23, "Speed:"..KazeSpeed.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
+	doSomeText(48, 23, "X:"..KazeX.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
+--	doSomeText(48, 23, "Speed:"..KazeSpeed.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
 --	doSomeText(KazeX, KazeY2, ""..KazeY2.."", rgbblue[1], rgbblue[2], rgbblue[3], rgbblue[4])
 	
 
