@@ -8,39 +8,33 @@ gui.register( function ()
 
 --Colors
 rgbgreen = {0,200,0,200} rgbyellow = {255,255,0,255} rgborange = {255,100,0,255} rgbpink = {255,0,255,255}
-rgbcyan = {0,255,255,255} rgbFbox = {210,150,150,255} rgbred = {255,0,0,255} rgbblue = {0,100,255,255}
-rgbblack = {0,0,0,255} rgbwhite = {255,255,255,255} rgbredjimmy = {255, 0, 100, 255} rgbbluekaze = {100,0,250,255}
+rgbcyan = {0,255,255,255} rgbFbox = {210,150,150,255} rgbred = {255,0,0,255} rgbblue = {0,130,255,255}
+rgbblack = {0,0,0,255} rgbwhite = {255,255,255,255}
 
 	agg.setFont("gse5x7")					--font
 
---Kaze Infos
-	-- 1 byte (memory.readbyte(0x1F0458) the timmer of kaze hp bar refill
-	-- 1 byte (memory.readbyte(0x1F040A) hp bar
-	-- 2 byte (memory.readbyte(0x1F0432) X kaze
-	-- 2 byte (memory.readbyte(0x1F0433) another X kaze
-	-- 2 byte (memory.readbyte(0x1F0434) Y kaze
-	-- 2 byte (memory.readbyte(0x1F0435) another Y kaze
+--Player X position 001F07F4  scrolling 001F004F 001F004D subpixel ?
+--Player HP 001F07C9
 
-	KazeSpeed = (memory.readbyte(0x1F0421));
+	PlayerHP = (memory.readbyte(0x1F07C9));
+
+	PlayerX = (memory.readbyte(0x1F07F4));
+	
 	KazeX = (memory.readword(0x1F0433));
-	KazeX2 = (memory.readword(0x1F0432))/256;
-	KazeY = (memory.readword(0x1F0435));
-	KazeY2 = (memory.readword(0x1F0434))/256;
-	KazeHP = (memory.readbyte(0x1F040A));
-	KazeHPcounter = (memory.readbyte(0x1F0458));
 	
 
 
-	doSomeText(113, 15, ""..KazeHPcounter.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
-	doSomeText(42, 15, ""..KazeHP.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
-	doSomeText(48, 23, "X:"..KazeX.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
+	doSomeText(3, 32, ""..PlayerHP.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
+
+--	doSomeText(42, 15, ""..KazeHP.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
+--	doSomeText(48, 23, "X:"..KazeX.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
 --	doSomeText(48, 23, "Speed:"..KazeSpeed.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
 --	doSomeText(KazeX, KazeY2, ""..KazeY2.."", rgbblue[1], rgbblue[2], rgbblue[3], rgbblue[4])
 	
 
 --Input display
 	Joy1 = joypad.read(1)
-	doPlayerJoy(14, 0, Joy1, rgbbluekaze[1], rgbbluekaze[2], rgbbluekaze[3], rgbbluekaze[4], rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
+	doPlayerJoy(0, 0, Joy1, rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4], rgbblue[1], rgbblue[2], rgbblue[3], rgbblue[4])
 
 
 	--HP
