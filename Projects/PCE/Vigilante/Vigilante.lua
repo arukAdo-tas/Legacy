@@ -8,23 +8,34 @@ gui.register( function ()
 
 --Colors
 rgbgreen = {0,200,0,200} rgbyellow = {255,255,0,255} rgborange = {255,100,0,255} rgbpink = {255,0,255,255}
-rgbcyan = {0,255,255,255} rgbFbox = {210,150,150,255} rgbred = {255,0,0,255} rgbblue = {0,130,255,255}
+rgbcyan = {0,255,255,255} rgbvig = {255,255,0,255} rgbred = {255,0,0,255} rgbblue = {0,100,255,255}
 rgbblack = {0,0,0,255} rgbwhite = {255,255,255,255}
 
 	agg.setFont("gse5x7")					--font
 
 --Player X position 001F07F4  scrolling 001F004F 001F004D subpixel ?
 --Player HP 001F07C9
+--ennemy pos A  001F003A
+--ennemy pos B  001F07E1
+
+-- memory.writebyte(0x1F07C9, 50) --cheat
 
 	PlayerHP = (memory.readbyte(0x1F07C9));
 
 	PlayerX = (memory.readbyte(0x1F07F4));
+	PlayerY = (memory.readbyte(0x1F07F4));
+
+	Scroll = (memory.readbyte(0x1F004F));
 	
-	KazeX = (memory.readword(0x1F0433));
+	Scrollz = (memory.readword(0x1F004F));
 	
 
 
-	doSomeText(3, 32, ""..PlayerHP.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
+	doSomeText(1, 32, ""..PlayerHP.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
+
+	doSomeText(90, 1, "X"..PlayerX.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
+	doSomeText(90, 1, "X"..PlayerY.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
+	doSomeText(65, 1, "S"..Scroll.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
 
 --	doSomeText(42, 15, ""..KazeHP.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
 --	doSomeText(48, 23, "X:"..KazeX.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
@@ -34,7 +45,7 @@ rgbblack = {0,0,0,255} rgbwhite = {255,255,255,255}
 
 --Input display
 	Joy1 = joypad.read(1)
-	doPlayerJoy(0, 0, Joy1, rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4], rgbblue[1], rgbblue[2], rgbblue[3], rgbblue[4])
+	doPlayerJoy(0, 0, Joy1, rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4], rgbvig[1], rgbvig[2], rgbvig[3], rgbvig[4])
 
 
 	--HP
