@@ -10,6 +10,7 @@ gui.register( function ()
 rgbgreen = {0,200,0,200} rgbyellow = {255,255,0,255} rgborange = {255,100,0,255} rgbpink = {255,0,255,255}
 rgbcyan = {0,255,255,255} rgbvig = {255,255,0,255} rgbred = {255,0,0,255} rgbblue = {0,100,255,255}
 rgbblack = {0,0,0,255} rgbwhite = {255,255,255,255}
+rgbgreenb = {0,200,160,250} rgbredp = {255,100,50,255}
 
 	agg.setFont("gse5x7")					--font
 
@@ -17,6 +18,8 @@ rgbblack = {0,0,0,255} rgbwhite = {255,255,255,255}
 --Player HP 001F07C9
 --ennemy pos A  001F003A
 --ennemy pos B  001F07E1
+
+-- Stage1 bossHP  001F07DC
 
 -- memory.writebyte(0x1F07C9, 50) --cheat
 
@@ -29,9 +32,11 @@ rgbblack = {0,0,0,255} rgbwhite = {255,255,255,255}
 	
 	Scrollz = (memory.readword(0x1F004F));
 	
+	BossHP = (memory.readbyte(0x1F07DC));
 
 
-	doSomeText(1, 32, ""..PlayerHP.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
+	doSomeText(1, 32, ""..PlayerHP.."", rgbredp[1], rgbredp[2], rgbredp[3], rgbredp[4])
+	doSomeText(41, 40, ""..BossHP.."", rgbgreenb[1], rgbgreenb[2], rgbgreenb[3], rgbgreenb[4])
 
 	doSomeText(90, 1, "X"..PlayerX.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
 	doSomeText(90, 1, "X"..PlayerY.."", rgbwhite[1], rgbwhite[2], rgbwhite[3], rgbwhite[4])
