@@ -1,0 +1,12 @@
+
+10
+00000	7E003A	w	u	0	Frame Counter
+00001	7E000D	b	h	0	--------------
+00002	7E054A	w	u	0	X Pos
+00003	7E0549	w	u	0	X Sub
+00004	7E000D	b	s	0	--------------
+00005	7E1F9C	w	u	0	Y Pos (Head)
+00006	7E054E	w	u	0	Y Pos (Center/?)
+00007	7E1F9A	w	u	0	Y Pos (Feet)
+00008	7E000D	b	u	0	--------------
+00009	7E13F6	b	u	0	Boss Energy
