@@ -1,5 +1,5 @@
 
-15
+17
 00000	7E003A	w	u	0	Frame Counter
 00001	7E000D	b	h	0	--------------
 00002	7E054A	w	u	0	X Pos
@@ -10,8 +10,10 @@
 00007	7E1F9A	w	s	0	Y Pos (Feet)
 00008	7E055E	w	s	0	Y Speed (?)
 00009	7E000D	b	u	0	--------------
-0000A   7E056E  b	u	0	Crouch Timer
+0000A	7E056E	 			0	Crouch Timer
 0000B	7E00BC	w	u	0	Simon Hitstun Timer
 0000C	7E13F6	b	u	0	Boss Energy
-0000D	7E13F4	b	u	0	Health Bar
-0000E	7E13F2	b	u	0	Heart Counter
+0000D	7E05BE	w	s	0	Golden Greater Bat HP
+0000E	7E13F4	b	u	0	Health Bar
+0000F	7E13F2	b	u	0	Heart Counter
+00010	7E02C1	b	u	0	Whip Flag
