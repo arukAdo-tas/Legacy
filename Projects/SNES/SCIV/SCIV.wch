@@ -1,5 +1,5 @@
 
-21
+22
 00000	7E003A	w	u	0	Frame Counter
 00001	7E000D	b	h	0	--------------
 00002	7E054A	w	u	0	X Pos
@@ -19,5 +19,6 @@
 00010	7E067E	w	s	0	Golden Center Bat HP
 00011	7E0606	w	s	0	Golden Left Bat HP
 00012	7E0D86	w	s	0	Mummy HP
-00013	7E13F2	b	u	0	Heart Counter
-00014	7E02C1	b	u	0	Whip Flag
+00013	7E0586	w	s	0	Slogra HP
+00014	7E13F2	b	u	0	Heart Counter
+00015	7E02C1	b	u	0	Whip Flag
