@@ -1,0 +1,40 @@
+%%%Super Castlevania IV for the Super Nintendo. Unobsoleted for 7 years, longer than any other run in tasvideos. That just changed.
+
+%%%
+!! Summary
+* Abuses Programming Errors
+* Takes Damage To Save Time
+* Manipulates Luck
+* Emulator used: {{__[http://code.google.com/p/snes9x-rr/downloads/list|Snes9x-rr]__}} (((( (1.43 v17) )))) 
+* ''Length:__29:38__''   ''Frames:__106685__''   ''Re-records:__128384 __''
+----
+
+Well, here it is. This movie is a co-effort between arukAdo, Cardboard, Bablo and scrimpeh. Originally started by Cardboard and Bablo, they played up to Stage 3-3, from where the two of us took over. We end up beating Phil and Genisto's old movie by ~77 seconds, (97 total, since we also left out the dance at the end).
+
+For a list of tricks, both old and new, please refer the [GameResources/SNES/SuperCastlevaniaIV|Game Resources page]
+
+
+%%%
+! Stages Review
+
+
+%%%
+%%%
+%%%
+----
+
+%%%
+! Improvements
+
+%%%
+%%%
+%%%
+%%%
+----
+
+
+
+! Closing
+
+%%%
+%%%
