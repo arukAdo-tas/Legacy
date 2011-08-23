@@ -1,0 +1,35 @@
+%%%Raccoon Forest, july 1998, Stars, a police elite unit is doing a reckon after a serie of unresolved murders.
+%%%Join Jill and Chris to uncover the root events of Raccon City. Welcome in the prelude to the horror.
+
+%%%
+!! Summary
+* Use Suboptimal Character (((( (unconfirmed but likely) ))))
+* Abuses Programming Error
+* Takes Damage To Save Time
+* Manipulates Luck
+* Emulator used: {{__[http://code.google.com/p/psxjin/downloads/list|psxjin]__}} (((( (2.0.2) )))) 
+* ''Length:__xx:xx__''   ''Frames:__xxxxxx__''   ''Re-records:__xxxxx__''
+[module:youtube|v=xxxxxxxx]
+----
+
+%%%
+!! About this movie
+
+%%%Ive been contacted on irc last month by Uroboros who did a Hunk run for Resident Evil2, I was pleased by the quality of the run (especially for a begginer) and convinced him that first it would be better to do the main game, we decided to co-op and do the 4 A/B movies (outch!).
+%%%Soon afterward Ajax decided to submit his run, while at first look the movie looked great I figured it was missing precision when looking closer to the input file, we decided then with Uroboros to optimize this movie first before going further with RE2.
+%%%This is [module:frames|frames=xxxxxxxx] faster than the [http://tasvideos.org/3241S.html|canceled movie]. Id like to give Ajax proper credits for doing a good draft/test run, it wasnt very hard to optimize the movie with that reference, yet no input was kept so I dont feel the need to put him as a co-author.
+%%%Id like also to give proper credits to Spider-Waffle for pointing out the glitch with the plant to get the armor key without chemical, i dont know with precision how much this saved but its over a minute, and this is the main twist compared to Ajax's movie.
+%%%If it wasnt for that trick we would still been over a minute faster, while following the older route we did save ~20seconds for reaching the serum room trought various optimizations. To be totally frank the canceled movie was poor technically, just on the main menu we could save over 100 frames, you can even notice real time the intro starting after menus.
+----
+
+%%%
+!! Improvements
+
+%%%
+----
+
+%%%
+!! Stages Review
+
+%%%
+----
