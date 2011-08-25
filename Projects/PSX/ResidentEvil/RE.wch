@@ -1,4 +1,10 @@
 
-2
-00000	000C532C	w	s	0	Snake HP
-00001	000C8786	w	s	0	Handgun Ammo
+8
+00000	000C51AC	w	s	0	Player HP
+00001	000C8786	w	s	0	Jill Handgun Ammo
+00002	000C8784	w	s	0	Chris Handgun Ammo
+00003	000C532C	w	s	0	Snake HP
+00004	000C5198	w	s	0	Direction
+00005	000C5158	w	s	0	X Position
+00006	000C5160	w	s	0	Y Position
+00007	000C515C	d	s	0	Z Position
