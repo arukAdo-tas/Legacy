@@ -27,6 +27,12 @@
 %%%The range for further optimization depend of the ammount of route change involved, if the route is stricly the same i dont except more than 5 seconds to be saved, unless we did some errors that we are not aware off. The complexity of the cutscenes sets may allow for route based time savers, but it require long and tedious testings, maybe avoiding the bazooka could save time but thats probably tight.
 %%%Now one more question you guys will want to know about is why PSX and not NDS, well, im all for having the 2 versions published, the games are quite differents with the cutscene removal and extra movements ect... Yet, i dont feel like the screen split would make the NDS version prefered _over_ PSX, if I had to choose only one then I would go for original PSX full screen and cheesy acting.
 %%%Then finally why Jill and not Chris, I believe both should be published, we went for Jill first simply to reuse the draft from Ajax, we are now going to do Chris now before going further into RE2.
-%%%Enjoy!
 ----
 
+%%%
+! Uroboros Comments
+%%%
+%%%
+%%%
+----
+%%%Enjoy!
