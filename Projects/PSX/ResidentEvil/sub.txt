@@ -31,8 +31,10 @@
 
 %%%
 ! Uroboros Comments
-%%%
-%%%
-%%%
+%%%This is my first TAS submission, first of all sorry for my poor english, i need to use translator sometimes.
+%%%Well, i decided to start re1 with arukAdo for being much simple than re2, first for not needing the "RE2/3 fix," and second for reusing a draft from AjAX, by the way i have an undone project of re2 which i really hope to finish after we're done with re1 stuff.
+%%%About the spider boss, (not sure if already quoted) i believe its the second easier boss in the game because we don't need to kill it, the first one is the plant boss because his hp isn't random Original mode, it always will be defeated with 3 grenades in this mode.  
+%%%we needed to use a slightly different method in spider as well, shooting grenades in front of the door or else the spider throw us venom, even this way we saved a few frames.
+%%%I don't have much things to say here because arukAdo already tells everything you need to know about the movie.
 ----
 %%%Enjoy!
