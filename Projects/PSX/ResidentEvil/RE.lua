@@ -19,11 +19,11 @@ while true do
 	Z = memory.readword(0xC515C);
 	D = memory.readword(0xC5198);
 
-gui.text(45, 0, "HP:" .. HP .. "|");
-gui.text(73, 0, "D:" .. D .. "|");
-gui.text(101, 0, "X:" .. X .. "|");
-gui.text(133, 0, "Y:" .. Y .. "|");
-gui.text(165, 0, "Z:" .. Z .. "");
+gui.text(93, 0, "D:" .. D .. "|");
+gui.text(121, 0, "X:" .. X .. "|");
+gui.text(153, 0, "Y:" .. Y .. "|");
+gui.text(185, 0, "Z:" .. Z .. "|");
+gui.text(215, 0, "HP:" .. HP .. "");
 
 psxjin.frameadvance()
 end
