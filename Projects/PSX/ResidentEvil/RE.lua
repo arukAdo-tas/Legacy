@@ -14,6 +14,7 @@ while true do
 --memory.writebyte(0xC8785, 9);
 
 	HP = memory.readword(0xC51AC);
+	Tyrant = memory.readword(0xC54B8);
 	X = memory.readword(0xC5158);
 	Y = memory.readword(0xC5160);
 	Z = memory.readword(0xC515C);
@@ -23,7 +24,8 @@ gui.text(93, 0, "D:" .. D .. "|");
 gui.text(121, 0, "X:" .. X .. "|");
 gui.text(153, 0, "Y:" .. Y .. "|");
 gui.text(185, 0, "Z:" .. Z .. "|");
-gui.text(215, 0, "HP:" .. HP .. "");
+gui.text(215, 0, "HP:" .. HP .. "|");
+gui.text(240, 0, "T:" .. Tyrant .. "");
 
 psxjin.frameadvance()
 end
