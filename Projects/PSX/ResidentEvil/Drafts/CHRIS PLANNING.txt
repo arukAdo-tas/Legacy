@@ -36,3 +36,14 @@ Black Tiger (knife/acid the web?)
 Put Flamethrower
 13 round Tyrant fight (Jap Version)
 and usual route until the end
+
+
+
+----------------------------------
+
+New Changes v1.1
+
+- If guns proves to be useless
+- Use first aid spray (use at Blue GEM)
+- une yellow key on door (next to Blue Gem)
+- only box deposit done in the guardhouse to drop mansion key
