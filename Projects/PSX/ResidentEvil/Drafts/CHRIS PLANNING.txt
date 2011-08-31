@@ -47,3 +47,10 @@ New Changes v1.1
 - Use first aid spray (use at Blue GEM)
 - une yellow key on door (next to Blue Gem)
 - only box deposit done in the guardhouse to drop mansion key
+
+v1.2
+
+- Drop gun
+- Use first aid spray (use at Blue GEM)
+- une yellow key on door (next to Blue Gem)
+- drop keys @ mansion's return (b4 snake)
