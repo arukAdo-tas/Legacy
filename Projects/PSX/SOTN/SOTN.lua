@@ -103,6 +103,20 @@ else
 gui.text(223, 233, "Revenge" .. revenge .. "");
 end
 
-pcsx.frameadvance()
+--memory.writebyte(0x72EFC, 0);
+--memory.writebyte(0x8480E, 100);
+
+--memory.writebyte(0xACEE2, 24);
+--memory.writebyte(0xACEE6, 17);
+--memory.writebyte(0xACEEA, 9);
+--memory.writebyte(0xACEFE, 24);
+--memory.writebyte(0xACF02, 17);
+--memory.writebyte(0xACF06, 9);
+
+--memory.writebyte(0x7342C, 15);
+
+--005F2CEE < jap version, address to the door in right lake (ferryman) ?
+
+psxjin.frameadvance()
 end
 
