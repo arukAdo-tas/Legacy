@@ -21,4 +21,6 @@
 136424 ·Loading|L/R· 
 76EF0 Revenge|Timer 
 X09010 RNG|Low|word 
-X09012 RNG|High|word 
+X09012 RNG|High|word
+4E314 - X Subpixel
+ 
