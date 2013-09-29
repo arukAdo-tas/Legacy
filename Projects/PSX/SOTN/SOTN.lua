@@ -1,5 +1,5 @@
 --Castlevania: Symphony Of The Night
-
+--
 
 -- RAM WATCH --
 --	playerHP = memory.readbyte(0x1fffff)
