@@ -105,7 +105,8 @@ end
 
 --memory.writebyte(0x72EFC, 0);
 --memory.writebyte(0x8480E, 100);
-
+--30097A10 0010 boomrangs
+--4E314 - X Subpixel (?)
 --memory.writebyte(0xACEE2, 24);
 --memory.writebyte(0xACEE6, 17);
 --memory.writebyte(0xACEEA, 9);
