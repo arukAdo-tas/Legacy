@@ -113,7 +113,7 @@ end
 --memory.writebyte(0xACEFE, 24);
 --memory.writebyte(0xACF02, 17);
 --memory.writebyte(0xACF06, 9);
---yay
+--yayyyy
 --memory.writebyte(0x7342C, 15);
 
 --005F2CEE < jap version, address to the door in right lake (ferryman) ?
