@@ -67,7 +67,7 @@ LONG LIBRARY
 OUTER WALL
 
 
-*/20. kill medusa head, get medusa shield (FLAMBERGE ROUTE ONLY)
+* Medusa shield is likely obselete due to Muramasa. keeping this point as reference
 
 ---
 
@@ -75,3 +75,5 @@ CLOCK TOWER
 
 
 * big toss off white skull thing, breathe out because the exp route isn't tight as hell anymore
+
+20. kill sword lord, then vandal sword (kill sword lord, let vandal sword follow you through the room until wolf jump to catch up?) for Muramasa, all bosses are now jokes
