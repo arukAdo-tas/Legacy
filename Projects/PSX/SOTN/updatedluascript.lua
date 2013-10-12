@@ -10,7 +10,7 @@ local var=0
 while true do
         var = 0;
 		input = joypad.get(1);
-	if input.l2 then
+	if input.triangle and input.circle then
      if input.left then
 	  joypad.set(1, {left=1, triangle=1})
 	  var=1
@@ -21,6 +21,10 @@ while true do
 	  var=1
 	  psxjin.frameadvance()
       end
+	 if input.square then
+	  joypad.set(1, {square=1})
+	  psxjin.frameadvance()
+	  end
 	 if var==0 then
 	  joypad.set(1, {triangle=1})
 	  psxjin.frameadvance()
