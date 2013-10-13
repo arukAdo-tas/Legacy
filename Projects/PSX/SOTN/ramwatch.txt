@@ -22,5 +22,6 @@
 76EF0 Revenge|Timer 
 X09010 RNG|Low|word 
 X09012 RNG|High|word
-4E314 - X|Camera
+X97C40 Muramasa|Blood
+3C8B8 Disabled|Menu
  
