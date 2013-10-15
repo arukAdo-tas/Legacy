@@ -7,34 +7,40 @@ local Xdummy = 0;
 local Ydummy = 0;
 local input={}
 local var=0
+local var2=0
 while true do
-        var = 0;
-		input = joypad.get(1);
+    input = joypad.get(1);
 	if input.triangle and input.circle then
-     if input.left then
-	  joypad.set(1, {left=1, triangle=1})
-	  var=1
-	  psxjin.frameadvance()
-	  end
-     if input.right then
-      joypad.set(1, {right=1, triangle=1})
-	  var=1
+	 if var==0 then
+      if input.left then
+	   joypad.set(1, {left=1, triangle=1})
+	   var=1
+	   var2=1
+	   end
+      if input.right then
+       joypad.set(1, {right=1, triangle=1})
+	   var=1
+	   var2=1
+       end
+	  if var2==0 then
+	   joypad.set(1, {triangle=1})
+	   var=1
+	   var2=1
+	   end
+	  psxjin.frameadvance()  
+	 if var==1 then  
+	  joypad.set(1, {circle=1})
+	  var=0
+	  var2=0
 	  psxjin.frameadvance()
       end
-	 if input.square then
-	  joypad.set(1, {square=1})
-	  psxjin.frameadvance()
-	  end
-	 if var==0 then
-	  joypad.set(1, {triangle=1})
-	  psxjin.frameadvance()
-	  end
-	joypad.set(1, {circle=1})
-   end
+	 end 
+	end  
         XPOS = memory.readdwordsigned(0x973F0);
         XVEL = memory.readbyte(0x733E2);
         YPOS = memory.readdwordsigned(0x973F4);
         YVEL = memory.readbyte(0x733E6);
+		memory.writebyte(0x97A4C, 11);
 		
 		CAMX = memory.readbyte(0x733DA);
         CAMY = memory.readbyte(0x733DE);
@@ -45,26 +51,23 @@ while true do
 		YPOS_SUB = memory.readbyte(0x733DD);
 		XPOS_REAL = XPOS+XPOS_SUB/256;
         YPOS_REAL = YPOS+YPOS_SUB/256;
-		XVEL_REAL = (XPOS_REAL-Xdummy);
-		YVEL_REAL = (YPOS_REAL-Ydummy);
 		SHIFTX = 0;
-            SHIFTX_STAR = ' ';
-            if CAMX < 128 then
-                    if XPOS < 128 then
-                            SHIFTX = XPOS-CAMX;
-                    else
-                            SHIFTX = 128-CAMX;
-                            SHIFTX_STAR = '*';
-                    end
-            elseif CAMX > 128 then
-                    if XPOS > MAP_WIDTH - 128 then
-                            SHIFTX = XPOS-MAP_WIDTH+256-CAMX;
-                    else
-                            SHIFTX = 128-CAMX;
-                            SHIFTX_STAR = '*';
-                    end
-     
+         SHIFTX_STAR = ' ';
+          if CAMX < 128 then
+           if XPOS < 128 then
+            SHIFTX = XPOS-CAMX;
+           else
+            SHIFTX = 128-CAMX;
+            SHIFTX_STAR = '*';
             end
+          elseif CAMX > 128 then
+           if XPOS > MAP_WIDTH - 128 then
+            SHIFTX = XPOS-MAP_WIDTH+256-CAMX;
+           else
+            SHIFTX = 128-CAMX;
+            SHIFTX_STAR = '*';
+            end
+     end
 		
 if (YVEL == 255) then YVEL = 0 end
 if (YVEL == 254) then YVEL = 1 end
@@ -91,21 +94,22 @@ if (XVEL == 247) then XVEL = 8 end
 if (XVEL == 246) then XVEL = 9 end
 
        
-        curMP = memory.readbyte(0x97BB0);
-        maxMP = memory.readbyte(0x97BB4);
+        curMP = memory.readword(0x97BB0);
+        maxMP = memory.readword(0x97BB4);
         STR = memory.readbyte(0x97BB8);
         CON = memory.readbyte(0x97BBC);
         INT = memory.readbyte(0x97BC0);
         LCK = memory.readbyte(0x97BC4);
-        curHeart = memory.readbyte(0x97BA8);
-        maxHeart = memory.readbyte(0x97BAC);
-        curHP = memory.readbyte(0x97BA0);
-        maxHP = memory.readbyte(0x97BA4);
-        curEXP = memory.readword(0x97BEC);
+        curHeart = memory.readword(0x97BA8);
+        maxHeart = memory.readword(0x97BAC);
+        curHP = memory.readword(0x97BA0);
+        maxHP = memory.readword(0x97BA4);
+        curEXP = memory.readdword(0x97BEC);
         rooms = memory.readword(0x3C760);
-        kills = memory.readbyte(0x97BF4);
+        kills = memory.readword(0x97BF4);
 		level = memory.readbyte(0x97BE8);
 		nextlvl = 0;
+		gold = memory.readdword(0x97BF0);
        
         bossHP = memory.readword(0x76ED6);
         GaibonHP = memory.readword(0x774B6);
@@ -113,6 +117,7 @@ if (XVEL == 246) then XVEL = 9 end
         Invul = memory.readbyte(0x72F1C);
         ctrl = memory.readbyte(0x72EFC);
         revenge = memory.readbyte(0x76EF0);
+		canPause = memory.readbyte(0x3C8B8);
        
         hours = memory.readbyte(0x97C30);
         mins = memory.readbyte(0x97C34);
@@ -121,12 +126,68 @@ if (XVEL == 246) then XVEL = 9 end
         RNGlow = memory.readword(0x09010);
         RNGhigh = memory.readword(0x09012);
        
-         
+         	 
+y = XPOS_REAL;
+x = math.floor(XPOS_REAL);
+if y==x then XPOS_REAL=x end
+if y>x and y<(x+.1) then XPOS_REAL=x end
+if y>(x+.1) and y<(x+.2) then XPOS_REAL=(x+.1) end
+if y>(x+.2) and y<(x+.3) then XPOS_REAL=(x+.2) end
+if y>(x+.3) and y<(x+.4) then XPOS_REAL=(x+.3) end
+if y>(x+.4) and y<(x+.5) then XPOS_REAL=(x+.4) end
+if y>(x+.5) and y<(x+.6) then XPOS_REAL=(x+.5) end
+if y>(x+.6) and y<(x+.7) then XPOS_REAL=(x+.6) end
+if y>(x+.7) and y<(x+.8) then XPOS_REAL=(x+.7) end
+if y>(x+.8) and y<(x+.9) then XPOS_REAL=(x+.8) end
+if y>(x+.9) and y<(x+1) then XPOS_REAL=(x+.9) end
+
+y = YPOS_REAL;
+x = math.floor(YPOS_REAL);
+if y==x then YPOS_REAL=x end
+if y>x and y<(x+.1) then YPOS_REAL=x end
+if y>(x+.1) and y<(x+.2) then YPOS_REAL=(x+.1) end
+if y>(x+.2) and y<(x+.3) then YPOS_REAL=(x+.2) end
+if y>(x+.3) and y<(x+.4) then YPOS_REAL=(x+.3) end
+if y>(x+.4) and y<(x+.5) then YPOS_REAL=(x+.4) end
+if y>(x+.5) and y<(x+.6) then YPOS_REAL=(x+.5) end
+if y>(x+.6) and y<(x+.7) then YPOS_REAL=(x+.6) end
+if y>(x+.7) and y<(x+.8) then YPOS_REAL=(x+.7) end
+if y>(x+.8) and y<(x+.9) then YPOS_REAL=(x+.8) end
+if y>(x+.9) and y<(x+1) then YPOS_REAL=(x+.9) end	 
 gui.text(50, 2, "X:" .. XPOS_REAL .. "");
 gui.text(50, 10, "Y:" .. YPOS_REAL .. "");
 
-gui.text(107, 2, "XV:" .. XVEL_REAL .. "");
-gui.text(107, 10, "YV:" .. YVEL_REAL .. "");
+XVEL_REAL = math.abs(XPOS_REAL-Xdummy);
+y = XVEL_REAL;
+x = math.floor(XVEL_REAL);
+if y==x then XVEL_REAL=x end
+if y>x and y<(x+.1) then XVEL_REAL=x end
+if y>(x+.1) and y<(x+.2) then XVEL_REAL=(x+.1) end
+if y>(x+.2) and y<(x+.3) then XVEL_REAL=(x+.2) end
+if y>(x+.3) and y<(x+.4) then XVEL_REAL=(x+.3) end
+if y>(x+.4) and y<(x+.5) then XVEL_REAL=(x+.4) end
+if y>(x+.5) and y<(x+.6) then XVEL_REAL=(x+.5) end
+if y>(x+.6) and y<(x+.7) then XVEL_REAL=(x+.6) end
+if y>(x+.7) and y<(x+.8) then XVEL_REAL=(x+.7) end
+if y>(x+.8) and y<(x+.9) then XVEL_REAL=(x+.8) end
+if y>(x+.9) and y<(x+1) then XVEL_REAL=(x+.9) end	 
+YVEL_REAL = math.abs(YPOS_REAL-Ydummy);
+y = YVEL_REAL;
+x = math.floor(YVEL_REAL);
+if y==x then YVEL_REAL=x end
+if y>x and y<(x+.1) then YVEL_REAL=x end
+if y>(x+.1) and y<(x+.2) then YVEL_REAL=(x+.1) end
+if y>(x+.2) and y<(x+.3) then YVEL_REAL=(x+.2) end
+if y>(x+.3) and y<(x+.4) then YVEL_REAL=(x+.3) end
+if y>(x+.4) and y<(x+.5) then YVEL_REAL=(x+.4) end
+if y>(x+.5) and y<(x+.6) then YVEL_REAL=(x+.5) end
+if y>(x+.6) and y<(x+.7) then YVEL_REAL=(x+.6) end
+if y>(x+.7) and y<(x+.8) then YVEL_REAL=(x+.7) end
+if y>(x+.8) and y<(x+.9) then YVEL_REAL=(x+.8) end
+if y>(x+.9) and y<(x+1) then YVEL_REAL=(x+.9) end	
+
+gui.text(87, 2, "XV:" .. XVEL_REAL .. "");
+gui.text(87, 10, "YV:" .. YVEL_REAL .. "");
 
 if (SHIFTX<3 and SHIFTX>-3) then
 gui.text(165, 2, "SHFT:N");
@@ -138,7 +199,13 @@ if (SHIFTX<=-3) then
 gui.text(165, 2, "SHFT:" .. SHIFTX .. SHIFTX_STAR .. "");
 end
 
-gui.text(165, 10, "X:" .. XVEL .. "/Y:" .. YVEL .. "");
+if (canPause>=1) then
+gui.text(165, 10, "Menu:Y");
+end
+if (canPause<1) then
+gui.text(165, 10, "Menu:N");
+end
+gui.text(197, 10, "G:" .. gold .. "");
 
 gui.text(0, 214, "MP:" .. curMP .. "");
 gui.text(0, 222, "STR:" .. STR .. " INT:" .. INT .. " CON:" .. CON);
@@ -150,10 +217,10 @@ if (ctrl<1) then
 gui.text(197, 2, "CTRL:Y");
 end
 if (Invul<=0) then
-gui.text(197, 10, "INV:N");
+gui.text(229, 2, "INV:N");
 end
 if (Invul>0) then
-gui.text(197, 10, "INV:" .. Invul .. "");
+gui.text(229, 2, "INV:" .. Invul .. "");
 end
 
 if (level==1) then nextlvl=(100-curEXP) end
@@ -194,7 +261,6 @@ if (level==35) then nextlvl=(76000-curEXP) end
 gui.text(169, 226, "Next:" .. nextlvl .. "");
 RNG = RNGhigh%RNGlow;
 gui.text(129, 229, "RNG:" .. RNG .. "");
---gui.text(117, 232, "RNGB:" .. RNGhigh .. "");
 
 gui.text(169, 232, "Kills:" .. kills .. "");
 gui.text(217, 226, "Boss:" .. bossHP .. "");
@@ -209,7 +275,7 @@ elseif (flagboss3 == true) then
 gui.text(217, 232, "Drac:" .. drac2HP .. "");
 if (drac2HP > 1201) then flagboss3 = false end
 else
-gui.text(217, 232, "Revenge:" .. revenge .. "");
+gui.text(217, 232, "Rvng:" .. revenge .. "");
 end
 
 --memory.writebyte(0x72EFC, 0);
