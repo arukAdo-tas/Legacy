@@ -1,0 +1,246 @@
+ Knight Shield 		97990  		
+ Iron Shield 		97991  		
+ Axelord Shield		97992  		
+ Herald Shield 		97993  		
+ Dark Shield 		97994  		
+ Goddess Shield 	97995  		
+ Shaman Shield 		97996  		
+ Medusa Shield 		97997  		
+ Skull Shield 		97998  		
+ Fire Shield 		97999  		
+ Alucard Shield 	9799A  	
+ Sword Of Dawn 		9799B  		
+ Basilard 		9799C  		
+ Short Sword 		9799D  		
+ Combat Knife 		9799E  		
+ Nunchaku 		9799F  		
+ WereBane 		979A0  		
+ Rapier 		979A1  		
+ Karma Coin 		979A2  		
+ Magic Missile 		979A3  	
+ Red Rust 		979A4  		
+ Takemitsu 		979A5  		
+ Shotel 		979A6  		
+ Orange 		979A7  		
+ Apple 			979A8  		
+ Banana 		979A9  		
+ Grapes 		979AA  		
+ Strawberry 		979AB  		
+ Pineapple 		979AC  		
+ Peanuts 		979AD  		
+ Toadstool 		979AE  		
+ Shiitake 		979AF  		
+ Cheese Cake 		979B0  		
+ Short Cake 		979B1  		
+ Tart 			979B2  		
+ Parfait 		979B3  		
+ Pudding 		979B4  		
+ Ice Cream 		979B5  		
+ Frankfurter 		979B6  		
+ Hamburger 		979B7  		
+ Pizza 			979B8  	
+ Cheese 		979B9  		
+ Ham and Eggs 		979BA  	
+ Omelette 		979BB 
+ Morning Set 		979BC  		
+ Lunch A 		979BD  		
+ Lunch B 		979BE  	
+ Curry Rice 		979BF  	
+ Gyros Plate 		979C0  	
+ Spaghetti 		979C1  		
+ Grape Juice 		979C2  	
+ Barley Tea 		979C3  	
+ Green Tea 		979C4  		
+ Natou 			979C5  	
+ Ramen 			979C6  		
+ Miso Soup 		979C7  	
+ Sushi 			979C8  		
+ Pork Bun 		979C9  	
+ Red Bean Bun 		979CA  		
+ Chinese Bun 		979CB  	
+ Dim Sum Set 		979CC  		
+ Pot Roast 		979CD  		
+ Sirloin 		979CE  	
+ Turkey 		979CF  
+ Meal Ticket 		979D0  	
+ Neutron Bomb 		979D1  	
+ Power Of Sire 		979D2  	
+ Pentagram 		979D3  	
+ Bat Pentagram 		979D4  		
+ Shuriken 		979D5  		
+ Cross Shuriken 	979D6  	
+ Buffalo Star 		979D7  		
+ Flame Star 		979D8  		
+ TNT 			979D9  	
+ Bwaka Knife 		979DA  		
+ Boomerang 		979DB  		
+ Javelin 		979DC  
+ Tyrfing 		979DD  		
+ Namakura 		979DE  	
+ Knuckle Duster 	979DF  
+ Gladius 		979E0  		
+ Scimitar 		979E1  		
+ Cutlass 		979E2  	
+ Saber 			979E3  		
+ Falchion 		979E4  	
+ Broadsword 		979E5  	
+ Bekatowa 		979E6  		
+ Damascus Sword 	979E7  		
+ Hunter Sword 		979E8  		
+ Estoc 			979E9  		
+ Bastard Sword 		979EA  		
+ Jewel Knuckles 	979EB  	
+ Claymore 		979EC  		
+ Talwar 		979ED  		
+ Katana 		979EE  		
+ Flamberge 		979EF  	
+ Iron Fist 		979F0  		
+ Zweihander 		979F1  		
+ Sword of Hador 	979F2  		
+ Luminus 		979F3  		
+ Harper 		979F4  		
+ Obsidian Sword 	979F5  		
+ Gram 			979F6  		
+ Jewel Sword 		979F7  		
+ Mormegil 		979F8  		
+ Firebrand 		979F9  		
+ Thunderbrand 		979FA  		
+ Icebrand 		979FB  		
+ Stone Sword 		979FC  		
+ Holy Sword 		979FD  		
+ Terminus Est 		979FE  		
+ Marsil 		979FF  		
+ Dark Blade 		97A00  		
+ Heaven Sword 		97A01  		
+ Fist Of Tulkas 	97A02  		
+ Gurthang 		97A03  		
+ Mourne Blade 		97A04  		
+ Alucard Sword 		97A05  		
+ Mablung Sword 		97A06  		
+ Badelaire 		97A07  		
+ Sword Familiar 	97A08  		
+ Great Sword 		97A09  		
+ Mace 			97A0A  		
+ Morning Star 		97A0B  		
+ Holy Rod 		97A0C  		
+ Star Flail 		97A0D  		
+ Moon Rod 		97A0E  		
+ Chakram 		97A0F  		
+ Fire Boomerang 	97A10  		
+ Iron Ball 		97A11  		
+ Holbein Dagger 	97A12  		
+ Blue Knuckles 		97A13  		
+ Dynamite 		97A14  		
+ Osafune Katana 	97A15  		
+ Masamune 		97A16  		
+ Muramasa 		97A17  		
+ Heart Refresh 		97A18  		
+ Rune Sword 		97A19  		
+ Antivenom 		97A1A  		
+ Uncurse 		97A1B  		
+ Life Apple 		97A1C  		
+ Hammer 		97A1D  		
+ Strength Potion 	97A1E  		
+ Luck Potion 		97A1F  		
+ Smart Potion 		97A20  		
+ Attack Potion 		97A21  		
+ Shield Potion 		97A22  		
+ Resist Fire 		97A23  		
+ Resist Thunder 	97A24  		
+ Resist Ice 		97A25  		
+ Resist Stone 		97A26  		
+ Resist Holy 		97A27  		
+ Resist Dark 		97A28  		
+ High Potion 		97A2A  		
+ Elixir 		97A2B  		
+ Manna Prism 		97A2C  		
+ Vorpal Blade 		97A2D  		
+ Crissaegrim 		97A2E  		
+ Yasutsuna 		97A2F  		
+ Library Card 		97A30  		
+ Alucard Shield 	97A31  		
+ Alucard Sword 		97A32  		
+ Cloth Cape 		97A64  		
+ Reverse Cloak 		97A65  		
+ Elven Cloak 		97A66  		
+ Crystal Cloak 		97A67  		
+ Royal Cloak 		97A68  		
+ Blood Cloak 		97A69  		
+ Joseph's Cloak 	97A6A  		
+ Twilight Cloak 	97A6B  		
+ Moonstone 		97A6D  		
+ Sunstone 		97A6E  		
+ Bloodstone 		97A6F  		
+ Staurolite 		97A70  		
+ Ring of Pales 		97A71  		
+ Zircon 		97A72  		
+ Aquamarine 		97A73  		
+ Turquoise 		97A74  		
+ Onyx 			97A75  		
+ Garnet 		97A76  		
+ Opal 			97A77  		
+ Diamond 		97A78  		
+ Lapis Lazuli 		97A79  		
+ Ring of Ares 		97A7A  		
+ Gold Ring 		97A7B  		
+ Silver Ring 		97A7C  		
+ Ring of Varda 		97A7D  		
+ Ring of Arcana 	97A7E  		
+ Mystic Pendant 	97A7F  		
+ Heart Broach 		97A80  		
+ Necklace of J 		97A81  		
+ Gauntlet 	        97A82  		
+ Ankh of Life 		97A83  		
+ Ring of Feanor 	97A84  		
+ Medal 	        	97A85  		
+ Talisman 	        97A86  		
+ Duplicator 		97A87  		
+ King's Stone 		97A88  		
+ Convenant Stone 	97A89  		
+ Nauglamir 	        97A8A  		
+ Secret Boots 		97A8B  		
+ Alucart Mail 		97A8C  		
+ Ballroom Mask 		97A4F  		
+ Bandana 	        97A50  		
+ Felt Hat 	        97A51  		
+ Velvet Hat 		97A52  		
+ Goggles 	        97A53  		
+ Leather Hat 		97A54  		
+ Holy Glasses 		97A55  		
+ Steel Helmet 		97A56  		
+ Stone Mask 		97A57  		
+ Circlet 	        97A58  		
+ Gold Circlet 		97A59  		
+ Ruby Circlet 		97A5A  		
+ Opal Circlet 		97A5B  		
+ Topaz Circlet 		97A5C  		
+ Beryl Circlet 		97A5D  		
+ Cat-Eye Circlet 	97A5E  		
+ Coral Circlet 		97A5F  		
+ Silver Crown	        97A61
+ Wizard Hat 		97A62  		
+ Cloth Tunic 		97A34  		
+ Hide Cuirass 		97A35  		
+ Bronze Cuirass 	97A36  		
+ Iron Cuirass 		97A37  		
+ Steel Cuirass 		97A38  		
+ Silver Plate 		97A39  		
+ Gold Plate 		97A3A  		
+ Platinum Mail 		97A3B  		
+ Diamond Plate 		97A3C  		
+ Fire Mail 	        97A3D  		
+ Lightning Mail 	97A3E  		
+ Ice Mail 	        97A3F  		
+ Mirror Cuirass 	97A40  		
+ Spikebreaker 		97A41  		
+ Alucard Mail 		97A42  		
+ Dark Armor 		97A43  		
+ Healing Mail 		97A44  		
+ Holy Mail 	        97A55  		
+ Walk Armor 		97A46  		
+ Brilliant Mail 	97A47  		
+ Mojo Mail 	        97A48  		
+ Fury Plate 		97A49  		
+ Dracula Tunic 		97A4A  		
+ God's Garb 		97A4B  		
+ Axelord Armor 		97A4C 
